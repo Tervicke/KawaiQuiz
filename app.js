@@ -42,23 +42,27 @@ function DisplayScore(){
 	quizEndPanel = document.getElementById('quizEndPanel')
 	quizEndPanel.style.display = "block"
 	document.body.appendChild(quizEndPanel)
-	percentage = (CorrectAnswerScore/Questions.length)*100
+	percentage = Math.floor((CorrectAnswerScore/Questions.length)*100)
 	document.getElementById("score").innerHTML = percentage + "%"
 	ScoreDegree = (percentage * 360 ) / 100
 	console.log(percentage)
 	rating = "h"
-	if(ScoreDegree <= 40)
+	if(percentage <= 40){
+
 		rating="bad"
-	if(ScoreDegree <= 70)
+	}
+	else if(percentage <= 70){
 		rating="mid"
+	}
 	else
 		rating="good"
 	if(percentage == 0 ){
 		ScoreDegree=360;
 		rating="bad"
 	}
+	console.log("percentage = " + percentage)
+	console.log("degree= " + ScoreDegree)
 	document.getElementById("Scorecircle").style.background = 
-
 		"conic-gradient(var(--rating-color-"+ rating +") " + ScoreDegree+"deg, #ededed 0deg)"
 }
 
