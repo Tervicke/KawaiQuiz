@@ -109,3 +109,21 @@ body{
 	color:white;
 	font-size:22px;
 }
+#footer-container{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#footer{
+	font-size:16px;
+	color:grey
+}
+#footer a{
+	color:#2832c2;
+}
+#red{
+	color:#e74c3c;
+}
