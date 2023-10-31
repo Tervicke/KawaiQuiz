@@ -1,6 +1,6 @@
 :root {
   --rating-color-good: #27ae60;
-  --rating-color-mid: #f1c40f;
+  --rating-color-mid: #E8DE2A;
   --rating-color-bad: #e74c3c;
 }
 body{
@@ -107,7 +107,7 @@ body{
 	position:absolute;
 	z-index:1000;
 	color:white;
-	font-size:22px;
+	font-size:40px;
 }
 #footer-container{
 	position:fixed;

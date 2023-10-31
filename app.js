@@ -1,7 +1,7 @@
-QuestionNo = 0;
+QuestionNo = 10;
 option_selected = 0;
 CorrectOption= 1;
-CorrectAnswerScore = 0;
+CorrectAnswerScore = 7;
 WrongAnswerScore = 0;
 
 document.getElementById("choices").addEventListener('click' , function(){
@@ -52,7 +52,6 @@ function DisplayScore(){
 	currentScore = 0;
 	let progress = setInterval(() =>{
 		console.log(currentScore)
-		document.getElementById("score").innerHTML = currentScore+ "%"
 		let currentpercentage = ((currentScore* 360) / 100 ) 
 		if(currentScore == 0 ){
 			ScoreDegree=360;
@@ -61,12 +60,14 @@ function DisplayScore(){
 		else if(currentScore<= 40){
 			rating="bad"
 		}
-		else if(currentScore<= 70){
+		else if(currentScore <= 70){
 			rating="mid"
 		}
 		else{
 			rating="good"
 		}
+		document.getElementById("score").innerHTML = currentScore+ ""
+		document.getElementById("score").style= "color :var(--rating-color-"+rating+")"
 		document.getElementById("Scorecircle").style.background = "conic-gradient(var(--rating-color-"+ rating +") " + currentpercentage+"deg, #ededed 0deg)"
 		if(currentScore == percentage){
 			clearInterval(progress)
