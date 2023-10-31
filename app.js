@@ -1,7 +1,7 @@
-QuestionNo = 10;
+QuestionNo = 0;
 option_selected = 0;
 CorrectOption= 1;
-CorrectAnswerScore = 7;
+CorrectAnswerScore = 0;
 WrongAnswerScore = 0;
 
 document.getElementById("choices").addEventListener('click' , function(){
