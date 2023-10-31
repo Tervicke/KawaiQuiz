@@ -1,7 +1,7 @@
-QuestionNo = 0;
+QuestionNo = 10;
 option_selected = 0;
 CorrectOption= 1;
-CorrectAnswerScore = 0;
+CorrectAnswerScore = 5;
 WrongAnswerScore = 0;
 
 document.getElementById("choices").addEventListener('click' , function(){
@@ -56,18 +56,21 @@ function DisplayScore(){
 		if(currentScore == 0 ){
 			ScoreDegree=360;
 			rating="bad"
+			document.getElementById("score").classList.add('NeonRed')
 		}
 		else if(currentScore<= 40){
 			rating="bad"
+			document.getElementById("score").classList.add('NeonRed')
 		}
 		else if(currentScore <= 70){
+			document.getElementById("score").classList.add('NeonYellow')
 			rating="mid"
 		}
 		else{
 			rating="good"
+			document.getElementById("score").classList.add('NeonGreen')
 		}
 		document.getElementById("score").innerHTML = currentScore+ ""
-		document.getElementById("score").style= "color :var(--rating-color-"+rating+")"
 		document.getElementById("Scorecircle").style.background = "conic-gradient(var(--rating-color-"+ rating +") " + currentpercentage+"deg, #ededed 0deg)"
 		if(currentScore == percentage){
 			clearInterval(progress)

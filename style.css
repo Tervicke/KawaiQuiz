@@ -10,7 +10,7 @@ body{
 	font-size:25px;
 	display:block;
 	border-radius:10px;
-	border:2px solid grey;
+	border:2px solid #C5CDED;
 	width:220px;
 	height:45px;
 	margin-top:8px;
@@ -18,13 +18,23 @@ body{
 	background:#454545; color:grey;
 	margin:auto;
 	margin-top:8px;
+	        color: #C5CDED;
+	text-shadow:
+          0 0 40px rgba(197, 205, 237, .7),
+          0 0 70px rgba(197, 205, 237, .7),
+          0 0 130px rgba(197, 205, 237, .7);
 }
 .choice:hover{
 	cursor:pointer;
 }
 #question{
+	color:#FF0079;
+	 text-shadow:
+          0 0 18px rgba(255, 0, 121, .7),
+          0 0 48px rgba(255, 0, 121, .7),
+          0 0 108px rgba(255, 0, 121, .7);
 	display:inline;
-	color:#9C3D54;
+	font-style:italic;
 	font-size:22px;
 }
 #choices{
@@ -46,11 +56,26 @@ body{
 	border:None;
 	border:1px solid #90EE90;
 	background:#90EE90;	
+	color:#fff;
+	 box-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 15px #0fa,
+      0 0 20px #0fa,
+      0 0 25px #0fa;
 }
 .WrongAns{
 	border:None;
 	border:1px solid #FF7F7F;
 	background:#FF7F7F;	
+	color:#fff;
+	 box-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+			0 0 15px #FF3300,
+			0 0 20px #FF3300,
+			0 0 25px #FF3300;
+
 }
 #quizEndPanel{
 	display:None;
@@ -79,6 +104,15 @@ body{
 	font-size:25px;
 	font-weight:Bold;
 	font-size:30px;
+	color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 42px #f09,
+      0 0 82px #f09,
+      0 0 92px #f09,
+      0 0 102px #f09,
+      0 0 151px #f09;
+
 }
 #Scorecircle{
 	height:120px;
@@ -123,11 +157,54 @@ body{
 }
 #footer a{
 	color:#2832c2;
+	color: #fff;
+  text-shadow:
+      0 0 7px #5271ff,
+      0 0 10px #5271ff,
+      0 0 21px #5271ff,
+      0 0 42px #5271ff,
+      0 0 82px #5271ff;
+	font-style:italic;
 }
 #red{
-	color:#e74c3c;
+	color: #fff;
+  text-shadow:
+      0 0 7px #FF3300,
+      0 0 10px #FF3300,
+      0 0 21px #FF3300,
+      0 0 42px #FF3300,
+      0 0 82px #FF3300;
+	
 }
 @keyframes spin-rotate {
   to { transform: rotate(.5turn); }
 }
+.NeonRed{
+color: #fff;
+  text-shadow:
+      0 0 7px #FF3300,
+      0 0 10px #FF3300,
+      0 0 21px #FF3300,
+      0 0 42px #FF3300,
+      0 0 82px #FF3300;
+	
 
+}
+.NeonGreen{
+color: #fff;
+  text-shadow:
+      0 0 7px #0fa,
+      0 0 10px #0fa,
+      0 0 21px #0fa,
+      0 0 42px #0fa,
+      0 0 82px #0fa;
+}
+.NeonYellow{
+color: #fff;
+  text-shadow:
+      0 0 7px #FFFF33,
+      0 0 10px #FFFF33,
+      0 0 21px #FFFF33,
+      0 0 42px #FFFF33,
+      0 0 82px #FFFF33;
+}
