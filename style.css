@@ -15,8 +15,7 @@ body{
 	height:45px;
 	margin-top:8px;
 	text-align:left;
-	background:#454545;
-	color:grey;
+	background:#454545; color:grey;
 	margin:auto;
 	margin-top:8px;
 }
@@ -101,6 +100,8 @@ body{
 	width:95px;
 	border-radius:50%;
 	background-color:black;
+	animation: bg-pie 12s step-end infinite;
+
 }
 #score{
 	position:absolute;
@@ -126,3 +127,7 @@ body{
 #red{
 	color:#e74c3c;
 }
+@keyframes spin-rotate {
+  to { transform: rotate(.5turn); }
+}
+

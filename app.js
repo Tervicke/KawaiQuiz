@@ -43,27 +43,36 @@ function DisplayScore(){
 	quizEndPanel.style.display = "block"
 	document.body.appendChild(quizEndPanel)
 	percentage = Math.floor((CorrectAnswerScore/Questions.length)*100)
-	document.getElementById("score").innerHTML = percentage + "%"
 	ScoreDegree = (percentage * 360 ) / 100
 	console.log(percentage)
 	rating = "h"
-	if(percentage <= 40){
 
-		rating="bad"
-	}
-	else if(percentage <= 70){
-		rating="mid"
-	}
-	else
-		rating="good"
-	if(percentage == 0 ){
-		ScoreDegree=360;
-		rating="bad"
-	}
 	console.log("percentage = " + percentage)
 	console.log("degree= " + ScoreDegree)
-	document.getElementById("Scorecircle").style.background = 
-		"conic-gradient(var(--rating-color-"+ rating +") " + ScoreDegree+"deg, #ededed 0deg)"
+	currentScore = 0;
+	let progress = setInterval(() =>{
+		console.log(currentScore)
+		document.getElementById("score").innerHTML = currentScore+ "%"
+		let currentpercentage = ((currentScore* 360) / 100 ) 
+		if(currentScore == 0 ){
+			ScoreDegree=360;
+			rating="bad"
+		}
+		else if(currentScore<= 40){
+			rating="bad"
+		}
+		else if(currentScore<= 70){
+			rating="mid"
+		}
+		else{
+			rating="good"
+		}
+		document.getElementById("Scorecircle").style.background = "conic-gradient(var(--rating-color-"+ rating +") " + currentpercentage+"deg, #ededed 0deg)"
+		if(currentScore == percentage){
+			clearInterval(progress)
+		}
+		currentScore++;
+	},25)
 }
 
 function SetQuestion(){
@@ -178,6 +187,16 @@ let Questions = [
 			"Denmark"
 		],
 		CorrectAns:4,
+	} , 
+	{
+		question:"After Ace died who ate the Mera Mera no mi ",
+		options: [
+			"Sabo",
+			"Nami",
+			"Bartholomeo",
+			"blackBeard"
+		],
+		CorrectAns:1,
 	}
 
 ];
