@@ -1,8 +1,15 @@
-QuestionNo = 0;
-option_selected = 0;
-CorrectOption= 1;
-CorrectAnswerScore = 0;
-WrongAnswerScore = 0;
+var QuestionNo = 0;
+var option_selected = 0;
+var CorrectOption= 1;
+var CorrectAnswerScore = 0;
+var WrongAnswerScore = 0;
+
+var choice1 = document.getElementById('choice1');
+var choice2 = document.getElementById('choice2');
+var choice3 = document.getElementById('choice3');
+var choice4 = document.getElementById('choice4');
+var Question_container  = document.getElementById('Question')
+
 
 document.getElementById("choices").addEventListener('click' , function(){
 	if(option_selected != 0){
@@ -16,12 +23,26 @@ function BtnClicked(e){
 }
 function Evaluate(){
 	if(CorrectOption== option_selected){
-		document.getElementById('choice'+option_selected).classList.add('CorrectAns')
+		if(option_selected == 1)
+			choice1.classList.add('CorrectAns')
+		if(option_selected == 2)
+			choice2.classList.add('CorrectAns')
+		if(option_selected == 3)
+			choice3.classList.add('CorrectAns')
+		if(option_selected == 4)
+			choice4.classList.add('CorrectAns')
 		CorrectAnswerScore++;
 	}
 	else{
 		WrongAnswerScore++;
-		document.getElementById('choice'+option_selected).classList.add('WrongAns')
+		if(option_selected == 1)
+			choice1.classList.add('WrongAns')
+		if(option_selected == 2)
+			choice2.classList.add('WrongAns')
+		if(option_selected == 3)
+			choice3.classList.add('WrongAns')
+		if(option_selected == 4)
+			choice4.classList.add('WrongAns')
 		document.getElementById('choice'+CorrectOption).classList.add('CorrectAns')
 	}
 	let flag = false;
@@ -35,7 +56,7 @@ function Evaluate(){
 		else{
 			SetQuestion()
 		}
-	}, 1000);
+	}, 500);
 }
 function DisplayScore(){
 	document.getElementById('quizPanel').remove()
@@ -78,18 +99,17 @@ function DisplayScore(){
 		currentScore++;
 	},25)
 }
-
 function SetQuestion(){
 	if(QuestionNo == Questions.length){
 		DisplayScore()
 	}
 	option_selected=0;
 	CorrectOption = Questions[QuestionNo].CorrectAns
-	document.getElementById('Question').innerHTML = Questions[QuestionNo].question;
-	document.getElementById('choice1').innerHTML = Questions[QuestionNo].options[0]
-	document.getElementById('choice2').innerHTML = Questions[QuestionNo].options[1]
-	document.getElementById('choice3').innerHTML = Questions[QuestionNo].options[2]
-	document.getElementById('choice4').innerHTML = Questions[QuestionNo].options[3]
+	Question_container.innerHTML = "&#x2022 " +  Questions[QuestionNo].question;
+	choice1.innerHTML = Questions[QuestionNo].options[0]
+	choice2.innerHTML = Questions[QuestionNo].options[1]
+	choice3.innerHTML = Questions[QuestionNo].options[2]
+	choice4.innerHTML = Questions[QuestionNo].options[3]
 	QuestionNo++;
 }
 let Questions = [
@@ -117,7 +137,7 @@ let Questions = [
 	},
 
 	{
-		question:"1) In the Anime Hunter x Hunter , Hisoka played a role in all of the following major story arcs, except:",
+		question:"In the Anime Hunter x Hunter , Hisoka played a role in all of the following major story arcs, except:",
 		options: [
 			"Hunter Exam Arc",
 			"Yorknew City Arc",
