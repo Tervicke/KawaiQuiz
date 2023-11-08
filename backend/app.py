@@ -4,6 +4,7 @@ from flask import Flask
 from flask import jsonify
 import sqlite3 as db
 from flask_cors import CORS, cross_origin
+import ast 
 
 app = Flask(__name__)
 
@@ -11,10 +12,10 @@ CORS(app)
 
 @app.route('/')
 def hello_world():
-    conn = db.connect('dat.db' , check_same_thread=False)
-    cur = conn.cursor()
-    cur.execute("Select * from data ORDER BY RANDOM() LIMIT 10")
-    return jsonify(cur.fetchall());
+    with open('today.txt' , 'r') as reader:
+        data_string = reader.read()
+        data = eval(data_string)
+    return jsonify(data[0])
 
 if __name__ =='__main__':  
     app.run(debug = True)
