@@ -10,7 +10,7 @@ app = Flask(__name__)
 def hello_world():
     conn = db.connect('dat.db' , check_same_thread=False)
     cur = conn.cursor()
-    cur.execute("Select * from data")
+    cur.execute("Select * from data ORDER BY RANDOM() LIMIT 10")
     return jsonify(cur.fetchall());
 
 if __name__ =='__main__':  
