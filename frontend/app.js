@@ -12,7 +12,7 @@ var Question_container  = document.getElementById('Question')
 let questions;
 
 
-const url = "http://tervicke.pythonanywhere.com/"; 
+const url = "https://tervicke.pythonanywhere.com/"; 
 $.ajax({
 		url :url,
 		type:"GET",
