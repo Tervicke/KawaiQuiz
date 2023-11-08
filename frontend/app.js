@@ -17,10 +17,8 @@ $.ajax({
 		url :url,
 		type:"GET",
 		beforeSend: function(){
-			console.log('getting')
 		},
 		success: function(response , status) {
-			console.log(response[1][0])
 			Questions = response
 			SetQuestion()
 		},
@@ -103,7 +101,6 @@ function DisplayScore(){
 			document.getElementById("score").classList.remove('NeonYellow')
 			document.getElementById("score").classList.add('NeonGreen')
 		}
-		console.log(currentScore)
 		document.getElementById("score").innerHTML = currentScore+ ""
 		document.getElementById("Scorecircle").style.background = "conic-gradient(var(--rating-color-"+ rating +") " + currentpercentage+"deg, #ededed 0deg)"
 		if(currentScore == percentage){
@@ -113,7 +110,6 @@ function DisplayScore(){
 	},25)
 }
 function SetQuestion(){
-	console.log(QuestionNo)
 	if(QuestionNo == 10){
 		DisplayScore()
 	}
