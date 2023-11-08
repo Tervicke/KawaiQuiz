@@ -3,8 +3,11 @@
 from flask import Flask
 from flask import jsonify
 import sqlite3 as db
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route('/')
 def hello_world():
