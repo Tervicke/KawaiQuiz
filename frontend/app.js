@@ -1,7 +1,7 @@
-var QuestionNo = 10;
+var QuestionNo = 0;
 var option_selected = 0;
 var CorrectOption= 1;
-var CorrectAnswerScore = 10;
+var CorrectAnswerScore = 0;
 var WrongAnswerScore = 0;
 
 var choice1 = document.getElementById('choice1');
