@@ -43,12 +43,14 @@ body{
 	margin-bottom:20px;
 }
 #skipbtn{
-	font-size:18px;
+	position:fixed;
+	font-size:27px;
 	padding-left:10px;
 	padding-right:10px;
-	color:black;
-	background-color:grey;
-	text-decoration:None;
+	background:black;
+	border:1px solid #FF0079;
+	border-radius:10px;
+	color:#FF0079;
 }
 #skinbtn:hover{
 	cursor:pointer;
