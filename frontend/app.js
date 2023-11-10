@@ -71,6 +71,7 @@ function Evaluate(){
 	}, 500);
 }
 function DisplayScore(){
+	
 	document.getElementById('quizPanel').remove()
 	quizEndPanel = document.getElementById('quizEndPanel')
 	quizEndPanel.style.display = "block"
@@ -108,6 +109,28 @@ function DisplayScore(){
 		}
 		currentScore++;
 	},25)
+	
+	//send the score to the server
+	sendScore(percentage)	
+}
+function sendScore(percent){
+	const data = {
+		  percentage: percent,
+	}
+	$.ajax({
+		url: url + 'post',
+		dataType: 'json',
+		type: 'post',
+		contentType: 'application/json',
+		data: JSON.stringify(data),
+		processData: false,
+		success: function( response , status){
+			console.log(response)
+		},
+		error: function( jqXhr, textStatus, errorThrown ){
+			console.log( errorThrown );
+		}
+	});
 }
 function SetQuestion(){
 	if(QuestionNo == 10){
@@ -122,117 +145,3 @@ function SetQuestion(){
 	choice4.innerHTML = Questions[QuestionNo][4]
 	QuestionNo++;
 } 
-/*
-let Questions = [
-
-	{
-		question:"who is the attack Titan ?",
-		options: [
-			"levi ackernman",
-			"eren yeager",
-			"armin alert",
-			"mikasa ackernman"
-		],
-		CorrectAns:2
-	},
-
-	{
-		question:"Who is sogeking ?",
-		options: [
-			"luffy",
-			"nami",
-			"usopp",
-			"sanji"
-		],
-		CorrectAns:3
-	},
-
-	{
-		question:"In the Anime Hunter x Hunter , Hisoka played a role in all of the following major story arcs, except:",
-		options: [
-			"Hunter Exam Arc",
-			"Yorknew City Arc",
-			"Greed Island Arc",
-			"Chimera Ant Arc"
-		],
-		CorrectAns:4
-	} ,
-
-	{
-		question:"After how much time will a person die since the moment their name has been written in a Death Note",
-		options: [
-			"immediately",
-			"1 minute",
-			"15 seconds",
-			"30 seconds"
-		],
-		CorrectAns:1
-	} ,
-
-	{
-		question:"In Dr.Stone for how many years has the Earth been petrified before Senku woke up",
-		options: [
-			"2700",
-			"3700",
-			"4700",
-			"5700"
-		],
-		CorrectAns:2,
-	} , 
-
-	{
-		question:"How many of the Lower Moons were killed by Kibutsuji Muzan in Demon Slayer",
-		options: [
-			"3",
-			"4",
-			"5",
-			"6"
-		],
-		CorrectAns:4,
-	} ,
-
-	{
-		question:"During the Skypiea arc in One Piece, which Strawhat members were swallowed by the Giant Snake",
-		options: [
-			"Luffy and Robin",
-			"Luffy and Nami",
-			"Zoro and Robin",
-			"Zoro and Nami"
-		],
-		CorrectAns:2,
-	} ,
-
-	{
-		question:"In Naruto, all the following characters can use Ninjutsu, except",
-		options: [
-			"Rock lee",
-			"Sakura",
-			"Sasuke",
-			"Naruto"
-		],
-		CorrectAns:1,
-	} ,
-
-	{
-		question:"[Vinland Saga] Where is Ketil's Farm located?",
-		options: [
-			"Norway",
-			"Germany",
-			"France",
-			"Denmark"
-		],
-		CorrectAns:4,
-	} , 
-	{
-		question:"After Ace died who ate the Mera Mera no mi ",
-		options: [
-			"Sabo",
-			"Nami",
-			"Bartholomeo",
-			"blackBeard"
-		],
-		CorrectAns:1,
-	}
-
-];
-*/
