@@ -1,7 +1,6 @@
 var QuestionNo = 0;
 var option_selected = 0;
-var CorrectOption= 1;
-var CorrectAnswerScore = 0;
+var CorrectOption= 1; var CorrectAnswerScore = 0;
 var WrongAnswerScore = 0;
 
 var choice1 = document.getElementById('choice1');
@@ -11,8 +10,8 @@ var choice4 = document.getElementById('choice4');
 var Question_container  = document.getElementById('Question')
 let questions;
 
-
 const url = "https://tervicke.pythonanywhere.com/"; 
+//const url = "http://127.0.0.1:5000/"
 $.ajax({
 		url :url,
 		type:"GET",
@@ -133,6 +132,7 @@ function sendScore(percent){
 	});
 }
 function SetQuestion(){
+	check_score() //check for previous score
 	if(QuestionNo == 10){
 		DisplayScore()
 	}
@@ -145,3 +145,20 @@ function SetQuestion(){
 	choice4.innerHTML = Questions[QuestionNo][4]
 	QuestionNo++;
 } 
+function check_score(){
+
+$.ajax({
+		url :url+"check",
+		type:"GET",
+		beforeSend: function(){
+		},
+		success: function(response , status) {
+			if(response[0] == 'not allowed'){
+				console.log(response)
+				CorrectAnswerScore = response[1]/10
+				DisplayScore()
+			}
+		},
+	})
+
+}

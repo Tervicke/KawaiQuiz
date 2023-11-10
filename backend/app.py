@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask import jsonify
 import sqlite3 as db
@@ -31,16 +30,19 @@ def post_score():
 @app.route('/check')
 def check():
     # get the ip check whether it exists in the score.db and then if it does return allowed and the score or not allowed 
-    ip = "123.0.0.1"
+    ip = "test ip"
     conn = db.connect('score.db' , check_same_thread=False)
     cur = conn.cursor()
-    cur.execute('select ip from scores where ip = "age"')
+    cur.execute('select ip from scores where ip = "test ip"')
     #cur.execute('select ip from scores where ip = (?)',(ip))
     row=cur.fetchall()
     if not (len(row) == 0):
-        return "not allowed"
+        cur.execute('select score from scores where ip =(?)',(ip,))
+        rows = list(cur.fetchall()[0])[0]
+        print(rows)
+        return ['not allowed' , rows]
     else: 
-        return "allowed"
+        return ["allowed",0]
 
 if __name__ =='__main__':  
     app.run(debug = True)
