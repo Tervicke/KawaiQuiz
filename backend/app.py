@@ -40,9 +40,9 @@ def check():
         cur.execute('select score from scores where ip =(?)',(ip,))
         rows = list(cur.fetchall()[0])[0]
         print(rows)
-        return ['not allowed' , rows]
+        return jsonify(['not allowed' , rows])
     else: 
-        return ["allowed",0]
+        return jsonify(["allowed",0])
 
 if __name__ =='__main__':  
     app.run(debug = True)
