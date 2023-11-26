@@ -14,39 +14,17 @@ body{
 	font-size:25px;
 	font-weight:Bold;
 	font-size:30px;
-	color: #fff;
-    text-shadow:
-      0 0 7px #fff,
-      0 0 14px #f09,
-      0 0 21px #f09,
-      0 0 28px #f09,
-      0 0 35px #f09,
-      0 0 49px #f09;
-
+	color:#FF69B4;
 }
 .NeonRed{
-color: #fff;
-  text-shadow:
-      0 0 7px #FF3300,
-      0 0 10px #FF3300,
-      0 0 21px #FF3300,
-      0 0 42px #FF3300,
-      0 0 82px #FF3300;
-	
+color: #FF3300;
 }
 #footer{
 	font-size:16px;
 	color:grey
 }
 #footer a{
-	color:#2832c2;
-	color: #fff;
-  text-shadow:
-      0 0 7px #5271ff,
-      0 0 10px #5271ff,
-      0 0 21px #5271ff,
-      0 0 42px #5271ff,
-      0 0 82px #5271ff;
+	color: #5271ff;
 	font-style:italic;
 }
 #footer-container{
@@ -70,12 +48,6 @@ color: #fff;
 	border-radius:25px;
 	color:#fff;
 	font-size:30px;
-	color: #fff;
-    text-shadow:
-      0 0 7px #fff,
-      0 0 42px #f09,
-      0 0 82px #f09,
-      0 0 102px #f09,
-      0 0 151px #f09;
-			    font-family: 'Open Sans', sans-serif;
+	color: #FF6EC7;
+	font-family: 'Open Sans', sans-serif;
 }

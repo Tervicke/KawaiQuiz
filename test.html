@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Quiz</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+        }
+
+        header {
+            background-color: #ff6f61;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .quiz-options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .quiz-options input {
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d95247;
+        }
+
+        .quiz-result {
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff6f61;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Anime Quiz</h1>
+    </header>
+
+    <main>
+        <p>Test your knowledge with our anime quiz! Good luck!</p>
+
+        <div class="quiz-question">
+            <p>1. Who is the main character in Naruto?</p>
+            <div class="quiz-options">
+                <label>
+                    <input type="radio" name="q1" value="a"> A. Sasuke
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="b"> B. Sakura
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="c"> C. Naruto
+                </label>
+            </div>
+        </div>
+
+        <!-- Add more questions as needed -->
+
+        <button onclick="showResult()">Submit</button>
+        <p class="quiz-result" id="result"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Anime Quiz | Designed by tervicke</p>
+    </footer>
+
+    <script>
+        function showResult() {
+            // You can implement the logic to calculate and display the result here
+            // For simplicity, let's just show a generic result
+            document.getElementById("result").innerText = "Your result: 2 out of 5 correct";
+        }
+    </script>
+
+</body>
+</html>
+

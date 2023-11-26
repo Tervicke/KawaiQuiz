@@ -107,15 +107,7 @@ body{
 	font-size:25px;
 	font-weight:Bold;
 	font-size:30px;
-	color: #fff;
-    text-shadow:
-      0 0 7px #fff,
-      0 0 14px #f09,
-      0 0 21px #f09,
-      0 0 28px #f09,
-      0 0 35px #f09,
-      0 0 491px #f09;
-
+	color:#FF69B4;
 }
 #Scorecircle{
 	height:120px;
@@ -143,7 +135,6 @@ body{
 #score{
 	position:absolute;
 	z-index:1000;
-	color:white;
 	font-size:40px;
 }
 #footer-container{
@@ -173,31 +164,11 @@ body{
   to { transform: rotate(.5turn); }
 }
 .NeonRed{
-color: #fff;
-  text-shadow:
-      0 0 7px #FF3300,
-      0 0 10px #FF3300,
-      0 0 21px #FF3300,
-      0 0 42px #FF3300,
-      0 0 82px #FF3300;
-	
-
+color: #e74c3c;
 }
 .NeonGreen{
-color: #fff;
-  text-shadow:
-      0 0 7px #0fa,
-      0 0 10px #0fa,
-      0 0 21px #0fa,
-      0 0 42px #0fa,
-      0 0 82px #0fa;
+color: #27ae60;
 }
 .NeonYellow{
-color: #fff;
-  text-shadow:
-      0 0 7px #FFFF33,
-      0 0 10px #FFFF33,
-      0 0 21px #FFFF33,
-      0 0 42px #FFFF33,
-      0 0 82px #FFFF33;
+color: #E8DE2A;
 }
