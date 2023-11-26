@@ -51,3 +51,22 @@ color: #FF3300;
 	color: #FF6EC7;
 	font-family: 'Open Sans', sans-serif;
 }
+#inputcontainer{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+#inputcontainer input{
+	background:black;
+	color:white;
+	border:1px solid #9C3D54;
+	font-size:20px;
+	height:40px;
+	border-radius:10px;
+	text-decoration:None;
+	color:grey;
+	padding:10px;
+}
+#inputcontainer textarea:focus, input:focus{
+    outline: none;
+}
