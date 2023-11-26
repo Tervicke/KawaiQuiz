@@ -10,7 +10,7 @@ var choice4 = document.getElementById('choice4');
 var Question_container  = document.getElementById('Question')
 let questions;
 
-const url = "http://tervicke.pythonanywhere.com/"; 
+const url = "https://tervicke.pythonanywhere.com/"; 
 //const url = "http://127.0.0.1:5000/"
 $.ajax({
 		url :url,
